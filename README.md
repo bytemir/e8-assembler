@@ -1,6 +1,6 @@
 # E8 8-Bit CPU Architecture
 
-The **E8** is a custom 8-bit CPU architecture designed in [Logisim Evolution](https://github.com/logisim-evolution/logisim-evolution), paired with a functional software emulator written in Python. Together, they provide a complete platform for exploring low-level computing: from gate-level hardware design through instruction execution, memory access, and real-time RGB video output.
+The **E8** is a custom 8-bit CPU architecture designed in [Logisim Evolution](https://github.com/logisim-evolution/logisim-evolution), paired with a functional software emulator written in C. Together, they provide a complete platform for exploring low-level computing: from gate-level hardware design through instruction execution, memory access, and real-time RGB video output.
 
 The architecture uses a fixed 32-bit instruction word, a small general-purpose register file, an accumulator for arithmetic, external RAM, and dedicated video registers for drawing to a display. Programs can be assembled into binary test files and executed on the emulator to observe register state, memory, and graphical output in action.
 
@@ -130,7 +130,7 @@ Because the video registers are ordinary general-purpose registers, the same val
 
 ## Emulator Gallery
 
-The Python emulator loads assembled programs (`.bin` files), executes instructions cycle-by-cycle, and renders output to a Pygame window. Sample test programs are included in the [`tests/`](tests/) directory.
+The C emulator loads assembled programs (`.bin` files), executes instructions cycle-by-cycle, and renders output to a display window. Sample test programs are included in the [`tests/`](tests/) directory.
 
 ### Colour Demo
 
@@ -148,8 +148,7 @@ The Python emulator loads assembled programs (`.bin` files), executes instructio
 |------|-------------|
 | [`circuit/e8.circ`](circuit/e8.circ) | Logisim Evolution circuit schematic |
 | [`images/`](images/) | Circuit and emulator screenshots |
-| [`src/Emulator.py`](src/Emulator.py) | Core CPU emulation logic |
-| [`src/Main.py`](src/Main.py) | Emulator entry point and display loop |
+| [`c`](src/Main.c) | Emulator entry point and display loop |
 | [`tests/`](tests/) | Sample assembled programs (`colour.bin`, `e8.bin`) |
 | [`ISA`](ISA) | Plain-text ISA reference |
 
