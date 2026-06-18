@@ -10,6 +10,7 @@ bin_file = open(out, "a")
 with open(path) as file: lines = [line.split(" ") for line in file]
 
 start_time = time.perf_counter()
+
 for index in range(len(lines)):
     line = lines[index]
     size = len(line)
